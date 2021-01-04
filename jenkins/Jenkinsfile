@@ -6,14 +6,9 @@ pipeline {
                 bat 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Test') {
+        stage('Run') {
             steps {
-                bat 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
+                bat 'java -jar target/my-app-1.0-SNAPSHOT.jar'
             }
         }
     }
