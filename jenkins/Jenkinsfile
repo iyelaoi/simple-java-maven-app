@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh 'java -jar %mainclasspath%'
+                sh 'java -jar $mainclasspath'
             }
         }
     }
