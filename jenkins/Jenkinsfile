@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Pre') {
             steps {
-                bat 'echo %runIT%'
-                bat 'echo %proName%'
+                sh 'echo %runIT%'
+                sh 'echo %proName%'
             }
         }
         stage('Build') {
             steps {
-                bat 'mvn -B -DskipTests clean package'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Run') {
             steps {
-                bat 'java -jar %mainclasspath%'
+                sh 'java -jar %mainclasspath%'
             }
         }
     }
