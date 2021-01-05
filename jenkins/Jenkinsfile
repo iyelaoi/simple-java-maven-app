@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Pre') {
             steps {
-                sh 'echo %runIT%'
-                sh 'echo %proName%'
+                sh 'echo $runIT'
+                sh 'echo $proName'
             }
         }
         stage('Build') {
